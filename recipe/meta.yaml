@@ -12,11 +12,12 @@ source:
 build:
   skip: true  # [py<37 or (not win) or (python_impl == 'pypy')]
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 2
+  number: 3
 
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
   host:
     - python 
     - setuptools >=62.0
